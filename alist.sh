@@ -31,5 +31,6 @@ sed -i "s|\$hide_files|$hide_files|g" /modify.sh
 # 修改权限
 chmod +x /modify.sh
 
-# 将 B 文件添加到 crontab
-(crontab -l 2>/dev/null; echo "*/10 0,15-23 * * * /modify.sh") | crontab -
+# 检查是否已在 crontab 中
+crontab_entry="*/10 0,15-23 * * * /modify.sh"
+(crontab -l | grep -Fxq "$crontab_entry") || (crontab -l 2>/dev/null; echo "$crontab_entry") | crontab -
