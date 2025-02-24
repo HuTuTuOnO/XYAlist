@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 数据库文件路径
-DB_PATH="data.db"
+DB_PATH="/opt/alist/data/data.db"
 
 # 更新数据库
 sqlite3 $DB_PATH <<EOF
