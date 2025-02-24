@@ -20,13 +20,13 @@ read -p "请输入 hide_files (默认: 空): " hide_files
 hide_files=${hide_files:-$default_hide_files}
 
 # 下载 B 文件
-wget -O /modify.sh "https://gh-proxy.com/https://raw.githubusercontent.com/HuTuTuOnO/XYAlist/main/modify.sh"
+wget -O /modify.sh "https://raw.githubusercontent.com/HuTuTuOnO/XYAlist/main/modify.sh"
 
 # 修改 B 文件
-sed -i "s/\$version/$version/" /modify.sh
-sed -i "s/\$site_title/$site_title/" /modify.sh
-sed -i "s/\$logo/$logo/" /modify.sh
-sed -i "s/\$hide_files/$hide_files/" /modify.sh
+sed -i "s|\$version|$version|g" /modify.sh
+sed -i "s|\$site_title|$site_title|g" /modify.sh
+sed -i "s|\$logo|$logo|g" /modify.sh
+sed -i "s|\$hide_files|$hide_files|g" /modify.sh
 
 # 修改权限
 chmod +x /modify.sh
