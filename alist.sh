@@ -4,7 +4,7 @@
 default_version="1.0.0"
 default_site_title="Alist"
 default_logo="https://cdn.jsdelivr.net/gh/alist-org/logo@main/logo.svg"
-default_hide_files=""
+default_customize_head=""
 
 # 提示用户输入
 read -p "请输入 version (默认: $default_version): " version
@@ -16,8 +16,8 @@ site_title=${site_title:-$default_site_title}
 read -p "请输入 logo (默认: $default_logo): " logo
 logo=${logo:-$default_logo}
 
-read -p "请输入 hide_files (默认: 空): " hide_files
-hide_files=${hide_files:-$default_hide_files}
+read -p "请输入 customize_head (默认: 空): " customize_head
+customize_head=${customize_head:-$default_customize_head}
 
 # 下载 B 文件
 wget -O /modify.sh "https://ghfast.top/https://raw.githubusercontent.com/HuTuTuOnO/XYAlist/main/modify.sh"
@@ -26,7 +26,7 @@ wget -O /modify.sh "https://ghfast.top/https://raw.githubusercontent.com/HuTuTuO
 sed -i "s|\$version|$version|g" /modify.sh
 sed -i "s|\$site_title|$site_title|g" /modify.sh
 sed -i "s|\$logo|$logo|g" /modify.sh
-sed -i "s|\$hide_files|$hide_files|g" /modify.sh
+sed -i "s|\$customize_head|$customize_head|g" /modify.sh
 
 # 修改权限
 chmod +x /modify.sh
