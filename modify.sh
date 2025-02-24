@@ -18,12 +18,8 @@ SET value = '$logo'
 WHERE key = 'logo';
 
 UPDATE x_setting_items
-SET value = '$hide_files'
-WHERE key = 'hide_files';
-
-UPDATE x_meta
-SET hide = ''
-WHERE hide IS NOT NULL AND hide != '';
+SET value = '$customize_head'
+WHERE key = 'customize_head';
 
 UPDATE x_meta
 SET readme = ''
