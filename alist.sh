@@ -16,9 +16,6 @@ site_title=${site_title:-$default_site_title}
 read -p "请输入 logo (默认: $default_logo): " logo
 logo=${logo:-$default_logo}
 
-read -p "请输入 customize_head (默认: 空): " customize_head
-customize_head=${customize_head:-$default_customize_head}
-
 # 下载 B 文件
 wget -O /modify.sh "https://ghfast.top/https://raw.githubusercontent.com/HuTuTuOnO/XYAlist/main/modify.sh"
 
@@ -26,7 +23,6 @@ wget -O /modify.sh "https://ghfast.top/https://raw.githubusercontent.com/HuTuTuO
 sed -i "s|\$version|$version|g" /modify.sh
 sed -i "s|\$site_title|$site_title|g" /modify.sh
 sed -i "s|\$logo|$logo|g" /modify.sh
-sed -i "s|\$customize_head|$customize_head|g" /modify.sh
 
 # 修改权限
 chmod +x /modify.sh
