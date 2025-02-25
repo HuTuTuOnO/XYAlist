@@ -18,12 +18,7 @@ SET value = '$logo'
 WHERE key = 'logo';
 
 UPDATE x_setting_items
-SET value = '$customize_head'
+SET value = (SELECT value || ' <style>div.hope-c-PJLV.hope-c-PJLV-ikSuVsl-css { display: none; }</style>' FROM x_setting_items WHERE key = 'customize_head')
 WHERE key = 'customize_head';
-
-UPDATE x_meta
-SET readme = ''
-WHERE readme IS NOT NULL AND readme != '';
-EOF
 
 echo "更新完成！"
